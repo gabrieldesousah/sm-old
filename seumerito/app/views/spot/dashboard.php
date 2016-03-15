@@ -22,7 +22,6 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
                 </div>
 			</div>
 			
-			<?php var_dump($this->userData);?>
 			
 			<div class="row left" id="box">
 				<b>Histórico</b>

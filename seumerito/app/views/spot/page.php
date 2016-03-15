@@ -53,14 +53,28 @@ if (!$this->auth->checkLogin('boolean')){
 					   		<a class="btn btn-default" data-toggle="modal" data-target="#ModalLogin" href="#ModalLogin">Download</a>
 			            <?php } ?>
 			        </div>
-			            
+			        
+			        <?php if($this->auth->checkLogin('boolean')){ ?>
 			        <div class="col-lg-4 right" style="padding: 0">
 		            	<a data-toggle="modal" data-target="#ModalReport" href="#ModalReport" alt="Reportar" style="margin-right: 5px;"> <i class="fa fa-exclamation-triangle"></i></a> 
-		            	<a data-toggle="modal" data-target="#ModalEdit" href="#ModalEdit" alt="Editar"   style="margin-right: 5px;"> <i class="fa fa-pencil-square-o"></i></a> 
-		            	<a data-toggle="modal" data-target="#ModalDelete" href="#ModalDelete" alt="Apagar"   style="margin-right: 5px;"> <i class="fa fa-minus-circle"></i></a> 
+		            	
+		            	<?php if($this->userData["permissions"] != 0){ ?>
+		            		<a data-toggle="modal" data-target="#ModalEdit" href="#ModalEdit" alt="Editar"   style="margin-right: 5px;"> <i class="fa fa-pencil-square-o"></i></a> 
+		            		<a data-toggle="modal" data-target="#ModalDelete" href="#ModalDelete" alt="Apagar"   style="margin-right: 5px;"> <i class="fa fa-minus-circle"></i></a> 
+		            	<?php } ?>
 		            </div>
+		            <?php } ?>
 		            
-		            
+				</div>
+			</div>
+		</div><!-- container -->
+	</div><!-- DG -->
+
+
+
+
+
+
 		            
 	<!-- MODAL FOR REPORT -->
 	<!-- Modal -->
@@ -80,8 +94,8 @@ if (!$this->auth->checkLogin('boolean')){
         						<textarea style="width: 100%; margin:0" name="message" id="message" placeholder="Diz aí..."></textarea>
         						<br><br>
         						<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
-        						<input style="width: 50%; margin:0" type="submit" class="btn btn-danger" value="Confirmar">
-        						<a style="width: 50%; float: right;" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</a>
+        						<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
+        						<a style="width: 50%; float: right;" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</a>
             	        	</form>
             	       	</div>
             	     </div><!-- /.row -->
@@ -116,12 +130,12 @@ if (!$this->auth->checkLogin('boolean')){
 							
 							<div class="">
 								<label>Matéria: </label><br>
-								<input class="input-large" name="content" id="content" value="" placeholder="Nome da Mat&eacute;ria" type="text" required>
+								<input class="input-large" name="content" id="content" value="<?php echo($this->materialData[0]["content"]);?> " placeholder="Nome da Mat&eacute;ria" type="text" required>
 							</div>
 							
 							<div class="">
 								<label>Professor: </label><br>
-								<input class="input-large" name="professor" id="professor" value="" placeholder="Nome do professor" type="text" required>
+								<input class="input-large" name="professor" id="professor" value="<?php echo($this->materialData[0]["professor"]);?>" placeholder="Nome do professor" type="text" required>
 							</div>
 							
 							<div class="">
@@ -135,7 +149,7 @@ if (!$this->auth->checkLogin('boolean')){
 							
 							<div class="">
 								<label>Tópicos, curso e descrição: </label><br>			
-								<input class="input-large" type='text' name='text' placeholder="ex. 1&ordf; ou 2&ordf; prova; Produto vetorial, matrizes; eng. civil.."/>
+								<input class="input-large" type='text' name='text' value="<?php echo($this->materialData[0]["text"]);?>"/>
 							</div>
 							
 						
@@ -157,14 +171,14 @@ if (!$this->auth->checkLogin('boolean')){
 							
 							<div class="">
 								<label>Unidade/descrição: </label><br>			
-								<input class="input-large" type='text' name='unity' placeholder="Ex. Campus II"/>
+								<input class="input-large" type='text' name='unity' value="<?php echo($this->materialData[0]["unity"]);?>" placeholder="Ex. Campus II"/>
 							</div>
 							
 							<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
         					<br>
         					
-        					<input style="width: 50%; margin:0" type="submit" class="btn btn-danger" value="Confirmar">
-            	       		<a style="width: 50%; float: right;" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</a>
+        					<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
+            	       		<a style="width: 50%; float: right;" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</a>
             	        </div>
             	            
     	            </div><!-- /.modal-content -->
@@ -188,7 +202,7 @@ if (!$this->auth->checkLogin('boolean')){
         		      	<form action="<?php echo ROOT;?>share/delete" method="post">
         		      		<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
         		       	
-        					<a style="width: 50%; margin:0" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</a>
+        					<a style="width: 50%; margin:0" class="btn btn-success" data-dismiss="modal" aria-hidden="true">Cancelar</a>
         					<input type="submit" style="width: 50%; margin:0" class="btn btn-danger" value="Apagar">
             	       	</form>
                    </div><!-- /row -->
@@ -196,11 +210,9 @@ if (!$this->auth->checkLogin('boolean')){
 	        </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-		            
-
-		            
-				</div>
-			</div>
-		</div><!-- container -->
-	</div><!-- DG -->
+    
+    
+    
+    
+    
 <?php include_once("footer.php");?>

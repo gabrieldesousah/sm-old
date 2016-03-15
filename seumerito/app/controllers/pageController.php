@@ -4,6 +4,7 @@ class Page extends Controller{
 	public $materialData;
 	
 	public function material(){
+		$this->redirectorHelper = new RedirectorHelper();
 
     	$data = $this->getParams();
         $id = $data["id"];
@@ -15,6 +16,9 @@ class Page extends Controller{
         $data['listData'] = $list_data;
         $this->materialData = $data['listData'];
         
+        if($this->materialData == null){
+        	$this->redirectorHelper->goToController('error');
+        }
         //var_dump();
         
         $this->view('page', $data);

@@ -5,6 +5,7 @@ class Share extends Controller{
 	
 	public function material(){
         $this->view('share', $material);
+        $this->redirectorHelper = new RedirectorHelper();
 	}
 	
 	public function upload(){
@@ -130,6 +131,32 @@ class Share extends Controller{
            	
 	    }
         header("Location: " . ROOT . "page/material/id/".$id);
+    }
+    
+    public function delete(){
+		$table = "articles";
+ 
+ 		$sessionHelper = new SessionHelper();
+        $authCheck = $sessionHelper->checkSession( "userAuth" );
+	    $userData = $sessionHelper->selectSession( "userData" );
+
+    	if($userData["permissions"] == 0){
+    		header("Location: " . ROOT);
+    	}
+	        	
+	
+		
+		$id			= $_POST["id"];
+		
+		date_default_timezone_set('America/Sao_Paulo');
+   		$date = date('Y-m-d H:i:s', time());
+		
+		$db = new Model();	
+	        	
+	    $where = "id = $id";
+        $db->delete($table, $where);
+        $this->redirectorHelper->goToController('index');
+        
     }
 
 }
