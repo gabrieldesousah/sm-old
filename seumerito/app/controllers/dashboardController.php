@@ -38,7 +38,11 @@ class Dashboard extends Controller{
 		$this->userHistoricSends = count($list_sends);
 		$data["userHistoricSends"] = $this->userHistoricSends;
         
-        
+
+        $messages = new MessagesModel();
+
+        $list_messages = $messages->listMessagesFollow( $this->userData[0]["user_id"], 160 );
+        $data['list_messages'] = $list_messages;
         
         $this->view('dashboard', $data);
         $this->view('dashboard', $users);

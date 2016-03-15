@@ -5,26 +5,12 @@ class MessagesModel extends Model{
     
     public function listMessages( $qtd, $offset = null ){
 
-        return $this->read($this->_table, "*", "status = '0'", $qtd, $offset, 'date ASC' );
+        return $this->read($this->_table, "*", "status = '0' and post_id != '0'", $qtd, $offset, 'date ASC' );
     }
     
-    public function insert(){
-        $dados=array(
-            "titulo" => "trarara",
-            "descricao" => "pararatibum"
-            );
-        return $this->insert( $this->_table, $dados);
+    public function listMessagesFollow( $author, $qtd, $offset = null ){
+
+        return $this->read($this->_table, "*", "author = $author", $qtd, $offset, 'date ASC' );
     }
     
-    public function update(){
-        $dados=array(
-            "titulo" => "atualiando",
-            "descricao" => "descricao"
-            );
-        return $this->update( $this->_table, $dados, "id=3");
-    }
-    
-    public function delete(){
-        return $this->delete( $this->_table, "id = 2");
-    }
 }

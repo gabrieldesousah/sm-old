@@ -71,6 +71,33 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
                 <?php } ?>
 			</div>
 			
+			<!-------------------------------------------------------------------------------------->
+			
+			<div class="row left" id="box">
+				<b>Mensagens</b>
+                <div class="table-container">
+	                <table class="table table-condensed col-lg-12">
+		                <?php if(count($view_list_messages) != 0) { ?>
+			                <?php
+			                foreach ( $view_list_messages as $list_messages ) : ?>
+				                    <tr>
+				                    	<td><?php echo $list_messages['message']; ?></td>
+				                    	<td style="color: yellow">
+				                    		<?php if($list_messages['status'] == "1"){ ?>
+				                    			Respondido
+				                    		<?php }else{ ?>
+				                    			Aguardando resposta
+				                    		<?php } ?> 
+				                    	</td>
+					                </tr>
+				                <?php endforeach; ?>
+		                <?php }else{ ?>
+		                	Você ainda nioão envu nenhuma mensagem
+  		                <?php } ?>
+              	</table>
+                </div>
+			</div>
+			
 
 			
 		</div><!-- container -->

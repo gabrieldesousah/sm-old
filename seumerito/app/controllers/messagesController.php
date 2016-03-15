@@ -39,4 +39,39 @@ class Messages extends Controller{
         	$message = $this->message;
         	$this->view('message', $message);
     }
+    
+    public function reply(){
+		
+		$this->sessionHelper = new SessionHelper();
+        $userData =  $this->sessionHelper->selectSession("userData");
+		$table = "messages";
+
+		$message       = $_POST["message"];
+		$answer_to     = $_POST["id"];
+		$author        = $userData["user_id"];
+		
+		date_default_timezone_set('America/Sao_Paulo');
+   		$date = date('Y-m-d H:i:s', time());
+		        
+		$data = array(
+          "message" => $message,
+          "answer_to" => $answer_to,
+          "author"  => $author,
+          "date"    => $date
+		            
+		);
+		$db = new Model();	
+			        	
+	        	
+	    $db->insert($table,$data);
+	    
+	    $data2 = array(
+          "status" => 1
+		);
+		$where = "id = $answer_to";
+	    $db->update($table,$data2,$where);
+	       	$this->message = "<h2>Respondido</h2>";
+        	$message = $this->message;
+        	$this->view('message', $message);
+    }
 }
