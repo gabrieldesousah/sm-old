@@ -90,8 +90,8 @@ if (!$this->auth->checkLogin('boolean')){
         		       	<div class="col-lg-12" style="padding:0; margin:0;">
         					Qual o  problema? Conte pra gente... Responderemos em breve!
         					<br><br>
-        					<form action="<?php echo ROOT;?>share/message" method="post">
-        						<textarea style="width: 100%; margin:0" name="message" id="message" placeholder="Diz aí..."></textarea>
+        					<form action="<?php echo ROOT;?>message/send" method="post">
+        						<textarea style="width: 100%; margin:0" name="message" id="message" placeholder="Diz aí..." required></textarea>
         						<br><br>
         						<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
         						<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
