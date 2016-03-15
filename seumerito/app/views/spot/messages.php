@@ -2,27 +2,29 @@
 	<!-- Faz um foreach aqui para todas as matérias-->
 	<div id="dg">
 		<div class="container">
-			<div class="row centered">
-
-                <?php foreach ( $view_list_messages as $list_messages ) : ?>
-                    <div class="col-lg-12">
-                        <div class="pricing-option">
-                            <div class="pricing-top" style="overflow: auto; height: auto; min-height: 50px; max-height: 200px;">
-                                <span style="width: 300px; overflow:hidden; height:11px; color:yellow;"><a href="<?php echo ROOT."page/material/id/".$list_messages['post_id'];?>">Resposta ao artigo <?php echo $list_messages['post_id'];?></a></span>
-								<br>
-                                <span><?php echo $list_messages['message']; ?></span>
-                            </div>
-                            <a data-toggle="modal" data-target="#ModalRespond" class="pricing-signup" href="#ModalRespond">Responder</a>  
+			<?php foreach ( $view_list_messages as $list_messages ) : ?>
+                <div class="row centered" id="box">
+					<div class="col-lg-12"  style="padding: 10px; border-radius: 5px; overflow: auto; height: auto; min-height: 50px; max-height: 250px;">
+                        <span style="width: 300px; overflow:hidden; height:11px; color:yellow;"><a href="<?php echo ROOT."page/material/id/".$list_messages['post_id'];?>">Resposta ao artigo <?php echo $list_messages['post_id'];?></a></span>
+						<hr>
+                        <span><?php echo $list_messages['message']; ?></span>
+                        <br><br>
+                        <div class="col-lg-8" style="padding: 0">
+                       		<a data-toggle="modal" data-target="#ModalRespond" class="btn btn-info" href="#ModalRespond">Responder</a>  
                         </div>
+                        <?php if($this->auth->checkLogin('boolean')){ ?>
+				        <div class="col-lg-4 right" style="padding: 0">
+			            	<a data-toggle="modal" data-target="#ModalReport" href="#ModalReport" alt="Reportar" style="margin-right: 5px;"> <i class="fa fa-exclamation-triangle"></i></a> 
+			            	
+			            	<?php if($this->userData["permissions"] != 0){ ?>
+			            		<a data-toggle="modal" data-target="#ModalEdit" href="#ModalEdit" alt="Editar"   style="margin-right: 5px;"> <i class="fa fa-pencil-square-o"></i></a> 
+			            		<a data-toggle="modal" data-target="#ModalDelete" href="#ModalDelete" alt="Apagar"   style="margin-right: 5px;"> <i class="fa fa-minus-circle"></i></a> 
+			            	<?php } ?>
+			            </div>
+			            <?php } ?>
                     </div>
-                <?php endforeach; ?>
-                    <!--
-                    <ul>
-                        <li><strong>Numero de</strong> Provas</li>
-                        <li><strong>Número de</strong> Resumos</li>
-                    </ul>
-                    -->
-			</div><!-- row -->
+                </div>
+            <?php endforeach; ?>
 		</div><!-- container -->
 	</div><!-- DG -->
 

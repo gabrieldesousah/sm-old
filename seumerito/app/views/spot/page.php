@@ -12,14 +12,11 @@ if (!$this->auth->checkLogin('boolean')){
 }
 ?>
 
-
-	<!-- Faz um foreach aqui para todas as matérias-->
 	<div id="dg">
 		<div class="container">
 			<div class="row centered" id="box">
 				<div class="col-lg-12">
-		                Conteúdo:   <?php echo($this->materialData[0]["content"]);?><br>
-		                Tipo: 
+					<h2>
 		                <?php
 		                switch($this->materialData[0]["type"]){
 		                    case 'exam': echo "Prova";
@@ -35,7 +32,8 @@ if (!$this->auth->checkLogin('boolean')){
 		                    break;
 		                }
 		                ?>
-		                <br>
+		                de <?php echo($this->materialData[0]["content"]);?>
+		             </h2>
 		                <?php if($this->materialData[0]["professor"] != ""){ ?>
 		                    Professor(a):  <?php echo($this->materialData[0]["professor"]);?><br>
 		                <?php } ?>
