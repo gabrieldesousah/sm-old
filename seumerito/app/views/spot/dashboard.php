@@ -82,7 +82,7 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 			                foreach ( $view_list_messages as $list_messages ) : ?>
 				                    <tr>
 				                    	<td><?php echo $list_messages['message']; ?></td>
-				                    	<td style="color: yellow">
+				                    	<td style="color: blue">
 				                    		<?php if($list_messages['status'] == "1"){ ?>
 				                    			Respondido
 				                    		<?php }else{ ?>
@@ -92,7 +92,7 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 					                </tr>
 				                <?php endforeach; ?>
 		                <?php }else{ ?>
-		                	Você ainda nioão envu nenhuma mensagem
+		                	Você ainda não enviou nenhuma mensagem
   		                <?php } ?>
               	</table>
                 </div>
