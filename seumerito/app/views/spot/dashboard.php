@@ -76,6 +76,10 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 			<div class="row left" id="box">
 				<b>Mensagens</b>
                 <div class="table-container">
+                	<?php if($this->userData["permissions"] != 0){ ?>
+                		<a class="btn btn-info" href="<?php echo ROOT.'messages';?>">Ver todas as mensagens</a>
+                		<br><br>
+                	<?php } ?>
 	                <table class="table table-condensed col-lg-12">
 		                <?php if(count($view_list_messages) != 0) { ?>
 			                <?php

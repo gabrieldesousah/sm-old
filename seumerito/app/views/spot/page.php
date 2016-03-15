@@ -61,8 +61,9 @@ if (!$this->auth->checkLogin('boolean')){
 		            		<a data-toggle="modal" data-target="#ModalDelete" href="#ModalDelete" alt="Apagar"   style="margin-right: 5px;"> <i class="fa fa-minus-circle"></i></a> 
 		            	<?php } ?>
 		            </div>
-		            <?php } ?>
-		            
+		            <?php }else{ ?>
+		            	<a data-toggle="modal" data-target="#ModalLogin" href="#ModalLogin" alt="Reportar" style="margin-right: 5px;"> <i class="fa fa-exclamation-triangle"></i></a> 
+					<?php } ?>
 				</div>
 			</div>
 		</div><!-- container -->
@@ -92,7 +93,7 @@ if (!$this->auth->checkLogin('boolean')){
         						<textarea style="width: 100%; margin:0" name="message" id="message" placeholder="Diz aí..." required></textarea>
         						<br><br>
         						<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
-        						<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
+        						<input style="width: 50%; margin:0" type="submit" class="btn btn-info" value="Confirmar">
         						<a style="width: 50%; float: right;" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</a>
             	        	</form>
             	       	</div>
@@ -175,7 +176,7 @@ if (!$this->auth->checkLogin('boolean')){
 							<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
         					<br>
         					
-        					<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
+        					<input style="width: 50%; margin:0" type="submit" class="btn btn-info" value="Confirmar">
             	       		<a style="width: 50%; float: right;" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</a>
             	        </div>
             	            
@@ -200,7 +201,7 @@ if (!$this->auth->checkLogin('boolean')){
         		      	<form action="<?php echo ROOT;?>share/delete" method="post">
         		      		<input type="hidden" name="id" value="<?php echo $this->materialData[0]["id"];?>">
         		       	
-        					<a style="width: 50%; margin:0" class="btn btn-success" data-dismiss="modal" aria-hidden="true">Cancelar</a>
+        					<a style="width: 50%; margin:0" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cancelar</a>
         					<input type="submit" style="width: 50%; margin:0" class="btn btn-danger" value="Apagar">
             	       	</form>
                    </div><!-- /row -->

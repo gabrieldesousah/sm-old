@@ -47,7 +47,7 @@ class Messages extends Controller{
 		$table = "messages";
 
 		$message       = $_POST["message"];
-		$answer_to     = $_POST["id"];
+		$started_in    = $_POST["id"];
 		$author        = $userData["user_id"];
 		
 		date_default_timezone_set('America/Sao_Paulo');
@@ -55,7 +55,7 @@ class Messages extends Controller{
 		        
 		$data = array(
           "message" => $message,
-          "answer_to" => $answer_to,
+          "started_in" => $started_in,
           "author"  => $author,
           "date"    => $date
 		            

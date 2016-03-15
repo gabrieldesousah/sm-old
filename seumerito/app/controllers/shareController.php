@@ -5,7 +5,6 @@ class Share extends Controller{
 	
 	public function material(){
         $this->view('share', $material);
-        $this->redirectorHelper = new RedirectorHelper();
 	}
 	
 	public function upload(){
@@ -155,6 +154,7 @@ class Share extends Controller{
 	        	
 	    $where = "id = $id";
         $db->delete($table, $where);
+        $this->redirectorHelper = new RedirectorHelper();
         $this->redirectorHelper->goToController('index');
         
     }
