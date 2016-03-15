@@ -44,10 +44,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- DG -->
-	
-	
-	
-	
+
 	
 	<div id="blue">
 		<div class="container">
@@ -96,6 +93,6 @@
 		    </div>
 		</div>
 	</div><!-- container -->
-	
+
 
 <?php include_once("footer.php");?>

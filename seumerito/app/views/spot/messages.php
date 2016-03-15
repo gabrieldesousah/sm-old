@@ -10,16 +10,18 @@
                         <span><?php echo $list_messages['message']; ?></span>
                         <br><br>
 
-                       	<a data-toggle="modal" data-target="#ModalRespond<?php echo $list_messages['id']; ?>" class="btn btn-info" href="#ModalRespond<?php echo $list_messages['id']; ?>">Responder</a>  
+                       	<a data-toggle="modal" data-target="#ModalRespond" item-id="<?php echo $list_messages['id']; ?>" class="btn btn-info" href="#ModalRespond">Responder</a>  
 
                     </div>
                 </div>
                 
-                
-                
-                	<!-- MODAL FOR RESPOND -->
+            <?php endforeach; ?>
+		</div><!-- container -->
+	</div><!-- DG -->
+
+<!-- MODAL FOR RESPOND -->
 	<!-- Modal -->
-	<div class="modal fade" id="ModalRespond<?php echo $list_messages['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+	<div class="modal fade" id="ModalRespond" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
 	            <div class="modal-header">
@@ -31,7 +33,9 @@
         		       	<div class="col-lg-12" style="padding:0; margin:0;">
         					<form action="<?php echo ROOT;?>messages/reply" method="post">
         						<textarea style="width: 100%; margin:0" name="message" id="message" required></textarea>
+        						<textarea id="recebe_id" style="height:0; width: 0; visibility:hidden" name="id"></textarea>
         						<br><br>
+        						
         						<input type="hidden" name="id" value="<?php echo $list_messages['id']; ?>">
         						<input style="width: 50%; margin:0" type="submit" class="btn btn-success" value="Confirmar">
         						<a style="width: 50%; float: right;" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</a>
@@ -42,14 +46,6 @@
 	        </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    
-    
-    
-            <?php endforeach; ?>
-		</div><!-- container -->
-	</div><!-- DG -->
-
-
 
 
     
@@ -57,3 +53,11 @@
     
     
 <?php include_once("footer.php");?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("a[data-toggle='modal'").click(function(){
+            $("textarea[id='recebe_id'").html($(this).attr("item-id"));
+        })
+    });
+</script>

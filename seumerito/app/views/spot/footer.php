@@ -113,7 +113,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
     
     <script src="<?php echo PATH_STYLE; ?>assets/js/bootstrap.min.js"></script>
     

@@ -86,9 +86,11 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 			                foreach ( $view_list_messages as $list_messages ) : ?>
 				                    <tr>
 				                    	<td><?php echo $list_messages['message']; ?></td>
-				                    	<td style="color: blue">
+				                    	<td style="color: blue;float: right;">
 				                    		<?php if($list_messages['status'] == "1"){ ?>
 				                    			Respondido
+				                    		<?php }elseif($list_messages['post_id'] == 0){ ?>
+				                    			
 				                    		<?php }else{ ?>
 				                    			Aguardando resposta
 				                    		<?php } ?> 

@@ -54,10 +54,10 @@ class Messages extends Controller{
    		$date = date('Y-m-d H:i:s', time());
 		        
 		$data = array(
-          "message" => $message,
+          "message"    => $message,
           "started_in" => $started_in,
-          "author"  => $author,
-          "date"    => $date
+          "author"     => $author,
+          "date"       => $date
 		            
 		);
 		$db = new Model();	
@@ -68,7 +68,7 @@ class Messages extends Controller{
 	    $data2 = array(
           "status" => 1
 		);
-		$where = "id = $answer_to";
+		$where = "id = $started_in";
 	    $db->update($table,$data2,$where);
 	       	$this->message = "<h2>Respondido</h2>";
         	$message = $this->message;
