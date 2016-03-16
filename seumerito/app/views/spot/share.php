@@ -16,18 +16,18 @@
 				<form action="upload" method="post" enctype="multipart/form-data">
 					
 					<div class="">
-						<label>O que voc&ecirc; vai compartilhar? </label><br>
+						<label>O que você vai compartilhar? </label><br>
 						<select class="input-large" name="type">
 							<option value="exam" selected="selected">Prova</option>
-							<option value="list">Lista de exerc&iacute;cios</option>
-							<option value="answers">Gabaritos e resolu&ccedil;&otilde;es</option>
+							<option value="list">Lista de exercícios</option>
+							<option value="answers">Gabaritos e resoluções</option>
 							<option value="resume">Resumos e explicações</option>
 						</select>
 					</div>
 					
 					<div class="">
-						<label>Mat&eacute;ria: </label><br>
-						<input class="input-large" name="content" id="content" value="" placeholder="Nome da Mat&eacute;ria" type="text" required>
+						<label>Matéria: </label><br>
+						<input class="input-large" name="content" id="content" value="" placeholder="Nome da Matéria" type="text" required>
 					</div>
 					
 					<div class="">
@@ -36,17 +36,17 @@
 					</div>
 					
 					<div class="">
-						<label>&Aacute;rea: </label><br>
+						<label>Área: </label><br>
 						<select class="input-large" name="area">
 							<option value="Exatas" selected="selected">Exatas</option>
 							<option value="Humanas">Humanas</option>
-							<option value="Biologicas">Biol&oacute;gicas</option>
+							<option value="Biologicas">Biológicas</option>
 						</select>
 					</div>
 					
 					<div class="">
-						<label>T&oacute;picos, curso e descri&ccedil;&atilde;o: </label><br>			
-						<input class="input-large" type='text' name='text' placeholder="ex. 1&ordf; ou 2&ordf; prova; Produto vetorial, matrizes; eng. civil.."/>
+						<label>Tópicos, curso e descrição: </label><br>			
+						<input class="input-large" type='text' name='text' placeholder="ex. 1° ou 2° prova; Produto vetorial, matrizes; eng. civil.."/>
 					</div>
 					
 
