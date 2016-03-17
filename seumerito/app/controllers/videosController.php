@@ -10,13 +10,24 @@ class Videos extends Controller{
     }
     
     public function material(){
-    	
-    	$posts = new VideosModel();
-    	
-    	
     	$data = $this->getParams();
-        $content = $data["content"];
+    	/***********************
+    	 Métricas
+    	 **********************/
+    	 
+    	$meter = new MeterModel();
+        $meter->update_num_viewers_videos();
+        $id = $data["id"];
+        $sessionHelper = new SessionHelper();
+        $authCheck = $sessionHelper->checkSession( "userAuth" );
         
+        if($authCheck === true){
+            $meter->insert_action_video($data["content"], $data["class"]);
+        }
+        
+        
+    	$posts = new VideosModel();
+        $content = $data["content"];
         $class = $data["class"];
         
         if($class == ""){

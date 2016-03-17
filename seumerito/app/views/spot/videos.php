@@ -3,9 +3,10 @@
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
+				<h4>Atenção: as vídeo-aulas ainda estão em fase beta</h4>
 			    <?php if($this->auth->checkLogin('boolean') && $this->userData["permissions"] != 0){ ?>
 					<div class="col-lg-12" style="text-align: right">
-						<a class="btn btn-info" href="share">Criar curso</a><br><br>
+						<a class="btn btn-info" href="<?php echo ROOT;?>videos/manage">Criar curso</a><br><br>
 					</div>
 				<?php } ?>
 				<?php foreach ( $view_list_posts as $list_posts ) : ?>

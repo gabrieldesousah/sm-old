@@ -8,16 +8,13 @@ class MeterModel extends Model{
     
     
     public function insert_action($action, $file_id){
-    	
         $this->tableName = "actions";
         
         $sessionHelper = new SessionHelper();
-        
         $authCheck = $sessionHelper->checkSession( "userAuth" );
         $userData = $sessionHelper->selectSession( "userData" );
             
         date_default_timezone_set('America/Sao_Paulo');
-           
 	   	$data["datetime"] = date('Y-m-d H:i:s', time());
 	   	$data["user_id"] = $userData["user_id"];
 	   	$data["action"] = $action;
@@ -27,16 +24,35 @@ class MeterModel extends Model{
 
         $where = "user_id = '".$data["user_id"]."' AND file_id = '".$data["file_id"]."'";
         $sql = $db->read($this->tableName, '*', $where, '1');
-
         if( count($sql) > 0 ){
             return $this->update( $this->tableName, $data, $where);
         }else{
         	return $db->insert($this->tableName, $data);
         }
-	
+    }
+    
+    public function insert_action_video($content, $class){
+        $this->tableName = "act_vd";
+        
+        $sessionHelper = new SessionHelper();
+        $authCheck = $sessionHelper->checkSession( "userAuth" );
+        $userData = $sessionHelper->selectSession( "userData" );
+            
+        date_default_timezone_set('America/Sao_Paulo');
+	   	$data["date"] = date('Y-m-d H:i:s', time());
+	   	$data["user_id"] = $userData["user_id"];
+	   	$data["content"] = $content;
+	   	$data["class"] = $class;
+	   	
+	   	$db = new Model();
 
-	    
-
+        $where = "user_id = '".$data["user_id"]."' AND class = '".$data["class"]."'";
+        $sql = $db->read($this->tableName, '*', $where, '1');
+        if( count($sql) > 0 ){
+            return $this->update( $this->tableName, $data, $where);
+        }else{
+        	return $db->insert($this->tableName, $data);
+        }
     }
     
     public function update_num_down(){
@@ -58,6 +74,22 @@ class MeterModel extends Model{
     public function update_num_viewers_files(){
     	$this->_table = "records";
     	$id = 3;
+    	
+    	$reader = $this->read($this->_table, '*', "id = $id");
+        $last = $reader[0]["number"];
+    	
+    	//$last = self::listRecords();
+
+        $dados=array(
+            "number" => $last + 1
+        );
+        
+        return $this->update( $this->_table, $dados, "id = $id");
+    }
+    
+    public function update_num_viewers_videos(){
+    	$this->_table = "records";
+    	$id = 4;
     	
     	$reader = $this->read($this->_table, '*', "id = $id");
         $last = $reader[0]["number"];
