@@ -13,7 +13,13 @@
 	    <?php } ?>
 	    
 			<div class="row left">
-				<form action="videos/share" method="post" enctype="multipart/form-data">
+				<form action="<?php echo ROOT."videos/send";?>" method="post" enctype="multipart/form-data">
+					
+					
+					<div class="">
+						<label>Link: </label><br>
+						<input class="input-large" name="link" id="link" value="" placeholder="http://youtube.com/...." type="text" required>
+					</div>
 					
 					<div class="">
 						<label>Título: </label><br>
@@ -21,28 +27,33 @@
 					</div>
 					
 					<div class="">
+						<label>T&oacute;picos, curso e descri&ccedil;&atilde;o: </label><br>			
+						<input class="input-large" type='text' name='text' placeholder="ex. 1&ordf; ou 2&ordf; prova; Produto vetorial, matrizes; eng. civil.."/>
+					</div>
+					
+					<div class="">
 						<label>Qual conteúdo? </label><br>
-						<input list="content" class="input-large" name="content" value="" placeholder="Nome da matéria" required>
+						<input list="content" class="input-large" name="content" value="<?php echo $view_list_posts[0]["content"];?>" placeholder="Nome da matéria" required>
 						<datalist id="content">
 							<?php foreach ( $view_list_posts as $list_posts ) : ?>
 								<option value="<?php echo $list_posts['content']; ?>">
 			                <?php endforeach; ?>
 						</datalist>
 					</div>
-					
+
 					<div class="">
-						<label>Qual Módulo/curso? </label><br>
-						<input list="course" class="input-large" name="course" value="" placeholder="Nome do módulo" required>
-						<datalist id="course">
+						<label>Qual Módulo? </label><br>
+						<input id="module" type="text" class="input-large" name="module" value="<?php echo $view_list_posts[0]["module"];?>" placeholder="Nome do módulo" required>
+						<datalist id="module">
 							<?php foreach ( $view_list_posts as $list_posts ) : ?>
-								<option value="<?php echo $list_posts['course']; ?>">
+								<option value="<?php echo $list_posts['module']; ?>">
 			                <?php endforeach; ?>
 						</datalist>
 					</div>
 
 					<div class="">
 						<label>Professor: </label><br>
-						<input list="professor" class="input-large" name="professor" value="" placeholder="Nome do professor" required>
+						<input list="professor" class="input-large" name="professor" value="<?php echo $view_list_posts[0]["professor"];?>" placeholder="Nome do professor" required>
 						<datalist id="professor">
 							<?php foreach ( $view_list_posts as $list_posts ) : ?>
 								<option value="<?php echo $list_posts['professor']; ?>">
@@ -50,10 +61,7 @@
 						</datalist>
 					</div>
 					
-					<div class="">
-						<label>Link: </label><br>
-						<input class="input-large" name="link" id="link" value="" placeholder="http://youtube.com/...." type="text" required>
-					</div>
+
 					
 					<div class="">
 						<label>Área: </label><br>
@@ -62,11 +70,6 @@
 							<option value="Humanas">Humanas</option>
 							<option value="Biologicas">Biológicas</option>
 						</select>
-					</div>
-					
-					<div class="">
-						<label>T&oacute;picos, curso e descri&ccedil;&atilde;o: </label><br>			
-						<input class="input-large" type='text' name='text' placeholder="ex. 1&ordf; ou 2&ordf; prova; Produto vetorial, matrizes; eng. civil.."/>
 					</div>
 					
 					<div class="centered">

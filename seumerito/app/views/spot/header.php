@@ -43,6 +43,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<?php echo ROOT;?>">HOME</a></li>
             <li><a href="<?php echo ROOT;?>contents">Conteúdos</a></li>
+            <li><a href="<?php echo ROOT;?>videos">Vídeo-aulas</a></li>
             <li><a href="<?php echo ROOT;?>share/material">Compartilhar</a></li>
             
             <?php if($this->auth->checkLogin('boolean')){ ?>
