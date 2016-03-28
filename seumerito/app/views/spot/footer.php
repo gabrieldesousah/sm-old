@@ -116,6 +116,7 @@
     <script src="//code.jquery.com/jquery.js"></script>
     
     <script src="<?php echo PATH_STYLE; ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo PATH_STYLE; ?>assets/js/typer.js"></script>
     
     
     

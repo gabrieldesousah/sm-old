@@ -70,10 +70,6 @@ if (!$this->auth->checkLogin('boolean')){
 	</div><!-- DG -->
 
 
-
-
-
-
 		            
 	<!-- MODAL FOR REPORT -->
 	<!-- Modal -->
@@ -101,7 +97,7 @@ if (!$this->auth->checkLogin('boolean')){
     	        </div><!-- /.modal-body -->
 	        </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->	    
+    </div><!-- /.modal -->
     
     
 	<!-- MODAL FOR EDIT -->

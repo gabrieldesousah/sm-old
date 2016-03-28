@@ -39,7 +39,18 @@ $resultado = preg_match($pattern, $subject, $matches);
 					<div class='embed-container'>
 						<iframe src='https://www.youtube.com/embed/<?php echo $matches[4]; ?>' frameborder='0' allowfullscreen></iframe>
 					</div>
+					
+					<br>
+					
+					<div>
+						<a class="btn btn-info" href="#">Anterior</a>
+						<a class="btn btn-info" href="#">Próxima</a>
+					</div>
+					
+					<br>
                 </div>
+
+
 
 				<div class="col-lg-3">
 		            <span class="btn btn-block btn-primary">Aulas</span>

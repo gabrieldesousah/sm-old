@@ -4,6 +4,11 @@ class Share extends Controller{
 	public $materialData;
 	
 	public function material(){
+		$posts = new ContentsModel();
+
+        $list_posts = $posts->listProfessors(160);
+        $data['list_posts'] = $list_posts;
+		
         $this->view('share', $material);
 	}
 	

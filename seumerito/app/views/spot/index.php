@@ -10,8 +10,9 @@
         			
         			<h2>Seu M&eacute;rito</h2>
         			<h3>
-        			    Sua plataforma colaborativa de provas.<br> 
-        			    Contribua para uma maior biblioteca de provas universitárias.
+        			    Sua plataforma colaborativa de <span class="typer" data-delay="100" data-words="provas, listas, resumos, resoluções, aulas" data-colors="white"></span><span class="cursor" data-owner="first-typer"></span><br> 
+        			    Contribua para uma maior acervo.
+
         			</h3>
 
             			<form action="<?php echo _GET; ?>" method="GET">
