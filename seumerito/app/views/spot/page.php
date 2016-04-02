@@ -70,6 +70,10 @@ if (!$this->auth->checkLogin('boolean')){
 	</div><!-- DG -->
 
 
+
+
+
+
 		            
 	<!-- MODAL FOR REPORT -->
 	<!-- Modal -->
@@ -97,7 +101,7 @@ if (!$this->auth->checkLogin('boolean')){
     	        </div><!-- /.modal-body -->
 	        </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    </div><!-- /.modal -->	    
     
     
 	<!-- MODAL FOR EDIT -->
@@ -130,7 +134,7 @@ if (!$this->auth->checkLogin('boolean')){
 							
 							<div class="">
 								<label>Professor: </label><br>
-								<input class="input-large" name="professor" id="professor" value="<?php echo($this->materialData[0]["professor"]);?>" placeholder="Nome do professor" type="text" required>
+								<input class="input-large" name="professor" id="professor" value="<?php echo($this->materialData[0]["professor"]);?>" placeholder="Nome do professor" type="text">
 							</div>
 							
 							<div class="">

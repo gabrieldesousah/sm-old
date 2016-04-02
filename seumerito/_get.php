@@ -1,6 +1,6 @@
 <?php
 
-$website = 'https://projects-gabrieldesousah.c9.io';
+$website = 'http://seumerito.com/';
 
     if(isset($_GET["code"])){
     	

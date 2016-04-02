@@ -10,7 +10,7 @@ if($this->auth->checkLogin('boolean')){
 		<div class="container">
 			<div id="box" class="row centered">
                 <h2>Registrar:</h2>
-                <!--
+
                 <form action="<?php echo ROOT;?>auth/signUp" name="signUp" method="post">
                     Nome: <input type="text" name="name"><br>
                     Email:<input type="email" name="email"><br>
@@ -18,8 +18,10 @@ if($this->auth->checkLogin('boolean')){
                             
                     <input type="submit">
                 </form>
-                -->
+<!--
                 Por enquanto o login está sendo feito exclusivamente pelo facebook. Se preferir uma outra forma de entrada, envie um email para contato@seumerito.com
+                -->
+                
 <br>
               		<a class="pricing-signup" href="https://www.facebook.com/dialog/oauth?client_id=1445655249068689&scope=email,public_profile&redirect_uri=<?php echo _GET; ?>">Cadastrar com Facebook</a>
             </div>

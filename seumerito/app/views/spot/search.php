@@ -30,6 +30,7 @@
 	                                <?php
 		                            if($list_posts['professor'] != ''){ ?>
 		                            	<span class="pricing-info" style="clear: all"><?php echo $list_posts['professor']; ?></span>
+		                            <?php }if($list_posts['text'] != ''){ ?>
 		                            	<span class="pricing-info" style="width: 300px; overflow:hidden; height:11px; color:yellow;"><?php echo $list_posts['text']; ?></span>
 		                            <?php } ?>
                                 </span>

@@ -1,4 +1,17 @@
 <?php include_once("header.php");?>
+
+<?php
+if (!$this->auth->checkLogin('boolean')){ 
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $current = $_SESSION['current'];
+    
+    
+}else{
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $_SESSION['current'] = "";
+}
+?>
+
 <style>
 .embed-container{
 	position: relative;
@@ -35,19 +48,19 @@ $resultado = preg_match($pattern, $subject, $matches);
 
 ?>
 
-				<div class="col-lg-9">
+				<div class="col-lg-9" style="padding: 0">
 					<div class='embed-container'>
 						<iframe src='https://www.youtube.com/embed/<?php echo $matches[4]; ?>' frameborder='0' allowfullscreen></iframe>
 					</div>
-					
 					<br>
 					
+					<!--
 					<div>
 						<a class="btn btn-info" href="#">Anterior</a>
 						<a class="btn btn-info" href="#">Próxima</a>
 					</div>
-					
 					<br>
+					-->
                 </div>
 
 

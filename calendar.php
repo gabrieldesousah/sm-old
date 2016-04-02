@@ -1,3 +1,17 @@
+<?php
+
+$ar = array(
+    "foo" => "bar",
+    "bar" => "foo"
+);
+
+setcookie("oi", serialize($ar), time()+30*24*3600);
+$data = json_decode($_COOKIE["oi"], true);
+var_dump($data);
+var_dump($_COOKIE);
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

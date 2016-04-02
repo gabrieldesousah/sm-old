@@ -71,21 +71,26 @@ class Share extends Controller{
 	        	
 	        	
 	            if($db->insert($table,$data)){
-	            	$this->message = "Arquivo enviado. Muito obrigado e continue compartilhando (:";
-            		$message = $this->message;
-            		$this->view('message', $message);
+	            	echo "<br><br>
+		        	Arquivo enviado. Muito obrigado e continue compartilhando (:";
+		        	
+		        	$this->view('share', $material);
 	            }
 	        }else{
-	        	$this->message = "O arquivo não foi enviado. Tente novamente";
-            	$message = $this->message;
-            	$this->view('message', $message);
+	        	
+	        	echo "<br><br>
+	        	O arquivo não foi enviado. Tente novamente";
+	        	
+	        	$this->view('share', $material);
 	        }
             
         }else{
         	if($db->insert($table,$data)){
-	           	$this->message = "Post criado. Muito obrigado e continue compartilhando (:"; //Quando o usuário não envia arquivo, e sim links.
-            	$message = $this->message;
-            	$this->view('message', $message);
+	           	//Quando o usuário não envia arquivo, e sim links.
+            	echo "<br><br>
+	        	Post criado. Muito obrigado e continue compartilhando (:";
+	        	
+	        	$this->view('share', $material);
 	        }
         }
     }

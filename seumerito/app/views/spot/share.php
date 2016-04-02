@@ -34,19 +34,6 @@
 						<label>Professor(necessário): </label><br>
 						<input class="input-large" name="professor" id="professor" value="" placeholder="Nome do professor" type="text" required>
 					</div>
-<?php var_dump($view_list_posts); ?>					
-					<div class="">
-						<label>Professor(necessário): </label><br>
-						<input id="professor" type="text" class="input-large" name="professor" placeholder="Nome do professor">
-						<datalist id="professor">
-							<?php foreach ( $view_list_posts as $list_posts ) : ?>
-								<option value="<?php echo $list_posts['professor']; ?>">
-			                <?php endforeach; ?>
-						</datalist>
-					</div>
-					
-					
-					
 					
 					<div class="">
 						<label>Área: </label><br>
