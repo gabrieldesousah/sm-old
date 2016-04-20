@@ -1,9 +1,11 @@
 <?php include_once("header.php");?>
 
 <?php
+/*
 if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 	header("Location: ".URL.$_SESSION['current']);
 }
+*/
 ?>
 
 	<!-- Faz um foreach aqui para todas as matérias-->

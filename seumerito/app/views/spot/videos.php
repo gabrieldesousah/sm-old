@@ -1,6 +1,7 @@
 <?php include_once("header.php");?>
 
 <?php
+/*
 if (!$this->auth->checkLogin('boolean')){ 
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $current = $_SESSION['current'];
@@ -10,12 +11,13 @@ if (!$this->auth->checkLogin('boolean')){
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $_SESSION['current'] = "";
 }
+*/
 ?>
 
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
-				<h4>Atenção: as vídeo-aulas ainda estão em fase beta</h4>
+				
 			    <?php if($this->auth->checkLogin('boolean') && $this->userData["permissions"] != 0){ ?>
 					<div class="col-lg-12" style="text-align: right">
 						<a class="btn btn-info" href="<?php echo ROOT;?>videos/manage">Criar curso</a><br><br>
@@ -34,6 +36,7 @@ if (!$this->auth->checkLogin('boolean')){
                 
 			</div><!-- row -->
 		</div><!-- container -->
+		<h4>Atenção: as vídeo-aulas ainda estão em fase de teste</h4>
 	</div><!-- DG -->
 
 <?php include_once("footer.php");?>

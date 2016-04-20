@@ -24,6 +24,13 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- BOO-BOX -->
+    <script type="text/javascript" src="http://static.boo-box.com/javascripts/boo-inject.js"></script>
+    <meta name="bbx-domain-token" content="1dd9683e77c488abb314b9f7fc910a2aab8cb765"/>
+   
+    <!-- / BOO-BOX -->
+    
   </head>
 
   <body>
@@ -55,11 +62,13 @@
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li>
-            
-            
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
-            
-            -->
+
+            -->            
+            <?php if($this->auth->checkLogin('boolean')){ ?>
+                <li><a data-toggle="modal" data-target="#Modal4" href="#Modal4"><i class="fa fa-envelope-o"></i></a></li>
+            <?php }else{ ?>
+                <li><a data-toggle="modal" data-target="#ModalLogin" href="#ModalLogin"><i class="fa fa-envelope-o"></i></a></li>
+            <?php } ?>
             
           </ul>
         </div><!--/.nav-collapse -->

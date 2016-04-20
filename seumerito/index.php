@@ -3,9 +3,9 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start();
     
-    define( 'URL' , 'http://seumerito.com');
+    define( 'URL' , 'http://projects-gabrieldesousah.c9.io/');
     
-    define( 'ROOT' , '/'); //Alterar o caminho
+    define( 'ROOT' , '/seumerito/'); //Alterar o caminho
     
     define( '_GET' , URL . ROOT . '_get.php'); //Alterar o caminho
     

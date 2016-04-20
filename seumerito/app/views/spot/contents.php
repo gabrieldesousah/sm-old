@@ -1,4 +1,17 @@
 <?php include_once("header.php");?>
+<?php
+/*
+if (!$this->auth->checkLogin('boolean')){ 
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $current = $_SESSION['current'];
+    
+    
+}else{
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $_SESSION['current'] = "";
+}
+*/
+?>
 
 	<!-- Faz um foreach aqui para todas as matérias-->
 	<div id="dg">

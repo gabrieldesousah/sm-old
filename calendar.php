@@ -1,15 +1,34 @@
 <?php
+	$meu_array = array("fruta" => "5", "laranja" => 10); // meu array
+	 
+    $meu_array = json_encode($meu_array); //serializando o array, eu posso transmiti-lo num cookie
+    var_dump($meu_array);
+	$obj = json_decode($meu_array); 
+	var_dump($obj);
+    setcookie("meu_cookie",$meu_array,time()+24*30); //criando um cookie com o meu array
+    
+    //recebendo o cookie, se ele tiver sido criado
+    $meu_array = isset($_COOKIE["meu_cookie"]) ? $_COOKIE["meu_cookie"] : "";
+    echo(json_decode($meu_array->fruta)); //decodificando o cookie e mostrando o array
+    
+    var_dump($meu_array);
+    
 
-$ar = array(
-    "foo" => "bar",
-    "bar" => "foo"
-);
-
-setcookie("oi", serialize($ar), time()+30*24*3600);
-$data = json_decode($_COOKIE["oi"], true);
-var_dump($data);
-var_dump($_COOKIE);
+	//string json contendo os dados de um funcionário ]
+	$json_str = '{"nome":"Jason Jones", "idade":38, "sexo": "M"}'; 
+	//faz o parsing na string, gerando um objeto PHP 
+	var_dump($json_str);
+	$obj = json_decode($json_str); 
+	var_dump($obj);
+	
+	//imprime o conteúdo do objeto 
+	echo "nome: $obj->nome<br>"; echo "idade: $obj->idade<br>"; echo "sexo: $obj->sexo<br>"; 
 ?>
+
+
+
+
+
 
 
 <!DOCTYPE html>

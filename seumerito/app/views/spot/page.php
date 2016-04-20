@@ -1,6 +1,7 @@
 <?php include_once("header.php");?>
 
 <?php
+/*
 if (!$this->auth->checkLogin('boolean')){ 
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $current = $_SESSION['current'];
@@ -10,6 +11,7 @@ if (!$this->auth->checkLogin('boolean')){
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $_SESSION['current'] = "";
 }
+*/
 ?>
 
 	<div id="dg">
@@ -42,6 +44,19 @@ if (!$this->auth->checkLogin('boolean')){
 		                <?php echo($this->materialData[0]["text"]);?><br>
 		                
 		                <hr>
+<div class="container">
+<div class="row centered">
+<script type="text/javascript">
+ bb_bid = "1703461";
+ bb_lang = "pt-BR";
+ bb_name = "custom";
+ bb_limit = "4";
+ bb_format = "bbm";
+ bb_bbdo = "344";
+</script>
+<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+</div>
+</div>
 		            <div class="col-lg-8" style="padding: 0">
 		                <?php if($this->auth->checkLogin('boolean')){ ?>
 			                <a class="btn btn-info"    target="_blank" href="<?php echo ROOT.'reader/material/id/'.$this->materialData[0]["id"];?>">Visualizar</a>

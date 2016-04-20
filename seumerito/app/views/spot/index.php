@@ -1,5 +1,17 @@
 <?php include_once("header.php");?>
-
+<?php
+/*
+if (!$this->auth->checkLogin('boolean')){ 
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $current = $_SESSION['current'];
+    
+    
+}else{
+    $_SESSION['current'] = $_SERVER["REQUEST_URI"];
+    $_SESSION['current'] = "";
+}
+*/
+?>
  
 	<div id="headerwrap">
 		<div class="container">

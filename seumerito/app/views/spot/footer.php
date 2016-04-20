@@ -2,6 +2,19 @@
 	<div id="f">
 		<div class="container">
 			<div class="row centered">
+<div class="container">
+	<div class="row centered">
+		<script type="text/javascript">
+		 bb_bid = "1703461";
+		 bb_lang = "pt-BR";
+		 bb_name = "custom";
+		 bb_limit = "4";
+		 bb_format = "bbm";
+		 bb_bbdo = "344";
+		</script>
+		<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+	</div>
+</div>
 			    <br>
 			    <section class="col-lg-12">
 					<div id="fb-root"></div>
@@ -54,7 +67,7 @@
 					    			<input type="submit" class="btn btn-danger" value="enviar">
 					          <div class="col-lg-12">
 					        		<a href="<?php echo ROOT;?>auth">Não é cadastrado? Clique aqui</a>
-					        	</div>
+				        	</div>
 					        	
     	            </div><!-- /.modal-content -->
 	            </form>
@@ -71,23 +84,20 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                <h4 class="modal-title" id="myModalLabel">Entre em contato</h4>
 	            </div>
-	            <form action="contact.php" method="post">
+	            <form action="<?php echo ROOT;?>messages/send" method="post">
     	            <div class="modal-body">
         		        <div class="row centered">
         					<header class="major">
-        						<p>Voc&ecirc; tem sugest&otilde;es e quer entrar em contato conosco? Use nosso e-mail:</p>
+        						<p>Voc&ecirc; tem sugest&otilde;es e quer entrar em contato conosco? Use nosso e-mail: contato@seumerito.com 
+        						ou preencha abaixo</p>
         					</header>
+
         					<div class="col-lg-12">
-        						<input name="name" id="name" value="" placeholder="Nome" type="text">
-        					</div>
-        					<div class="col-lg-12">
-        						<input name="email" id="email" value="" placeholder="E-mail" type="email">
-        					</div>
-        					<div class="col-lg-12">
-        						<input name="subject" id="subject" value="" placeholder="Assunto" type="text">
-        					</div>
-        					<div class="col-lg-12">
-        						<textarea name="message" id="message" placeholder="Mensagem"></textarea>
+        						<textarea style="width: 100%; margin:0" name="message" id="message" placeholder="Diz aí... Não se esqueça de por nome e e-mail" required></textarea>
+        						<input type="hidden" name="id" value="000">
+    						
+        						
+        						
         					</div>
             	        </div>
             	            <input type="submit" class="btn btn-danger" value="enviar">
@@ -119,7 +129,7 @@
     <script src="<?php echo PATH_STYLE; ?>assets/js/typer.js"></script>
     
     
-    
+        
     <!--Evitar print
     <div style="position: absolute; bottom: 0; opacity: 0; background: RGBA(0,0,0,0);">
 		<input type="text" id="copy_message" value="Print screen is not allowed" />

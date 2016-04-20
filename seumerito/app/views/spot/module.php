@@ -1,6 +1,7 @@
 <?php include_once("header.php");?>
 
 <?php
+/*
 if (!$this->auth->checkLogin('boolean')){ 
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $current = $_SESSION['current'];
@@ -10,6 +11,7 @@ if (!$this->auth->checkLogin('boolean')){
     $_SESSION['current'] = $_SERVER["REQUEST_URI"];
     $_SESSION['current'] = "";
 }
+*/
 ?>
 
 <style>
@@ -34,7 +36,7 @@ if (!$this->auth->checkLogin('boolean')){
 		<div class="container">
 			<div class="row centered">
 			    <?php if($this->auth->checkLogin('boolean') && $this->userData["permissions"] != 0){ ?>
-					<div class="col-lg-12" style="text-align: right">
+					<div class="col-lg-12" style="text-align: right; padding: 0">
 						<a class="btn btn-info" href="<?php echo ROOT;?>videos/manage/content/<?php echo($view_content);?>">Gerenciar curso</a><br><br>
 					</div>
 				<?php } ?>
@@ -48,7 +50,7 @@ $resultado = preg_match($pattern, $subject, $matches);
 
 ?>
 
-				<div class="col-lg-9" style="padding: 0">
+				<div class="col-lg-8" style="padding: 0">
 					<div class='embed-container'>
 						<iframe src='https://www.youtube.com/embed/<?php echo $matches[4]; ?>' frameborder='0' allowfullscreen></iframe>
 					</div>
@@ -63,9 +65,9 @@ $resultado = preg_match($pattern, $subject, $matches);
 					-->
                 </div>
 
+<div class="col-lg-1"></div>
 
-
-				<div class="col-lg-3">
+				<div class="col-lg-3" style="padding: 0;">
 		            <span class="btn btn-block btn-primary">Aulas</span>
 		            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
 		            	<?php foreach ( $view_list_posts as $list_posts ) : ?>
