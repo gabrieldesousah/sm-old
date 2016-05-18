@@ -4,6 +4,7 @@ class Page extends Controller{
 	public $materialData;
 	
 	public function material(){
+	
 		$this->redirectorHelper = new RedirectorHelper();
 
     	$data = $this->getParams();

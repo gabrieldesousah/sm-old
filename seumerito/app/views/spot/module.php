@@ -46,8 +46,8 @@ $pattern = "/youtu(be.com|.b)(\/v\/|\/watch\\?v=|e\/|\/watch(.+)v=)(.{11})/";
 $subject = $view_list_class[0]['url'];
 $matches = array();
 
-$resultado = preg_match($pattern, $subject, $matches);
 
+$resultado = preg_match($pattern, $subject, $matches);
 ?>
 
 				<div class="col-lg-8" style="padding: 0">
@@ -59,7 +59,7 @@ $resultado = preg_match($pattern, $subject, $matches);
 					<!--
 					<div>
 						<a class="btn btn-info" href="#">Anterior</a>
-						<a class="btn btn-info" href="#">Pr√≥xima</a>
+						<a class="btn btn-info" href="#">Pr®Æxima</a>
 					</div>
 					<br>
 					-->

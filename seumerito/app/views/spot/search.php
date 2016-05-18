@@ -49,6 +49,24 @@
                     -->
 			</div><!-- row -->
 		</div><!-- container -->
+		
+
+<div class="table-container">
+    <table class="table table-condensed col-lg-12">
+        <tr><td>
+        <script type="text/javascript">
+	 bb_bid = "1703461";
+	 bb_lang = "pt-BR";
+	 bb_name = "custom";
+	 bb_limit = "7";
+	 bb_format = "bbc";
+	 bb_bbdo = "344";
+	</script>
+	<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+        </td></tr>
+    </table>
+</div>
+
 	</div><!-- DG -->
 
 <?php include_once("footer.php");?>

@@ -44,26 +44,35 @@ if (!$this->auth->checkLogin('boolean')){
 		                <?php echo($this->materialData[0]["text"]);?><br>
 		                
 		                <hr>
-<div class="container">
-<div class="row centered">
-<script type="text/javascript">
- bb_bid = "1703461";
- bb_lang = "pt-BR";
- bb_name = "custom";
- bb_limit = "4";
- bb_format = "bbm";
- bb_bbdo = "344";
-</script>
-<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+
+
+
+<div class="table-container">
+    <table class="table table-condensed col-lg-12">
+        <tr><td>
+        <script type="text/javascript">
+	 bb_bid = "1703461";
+	 bb_lang = "pt-BR";
+	 bb_name = "custom";
+	 bb_limit = "7";
+	 bb_format = "bbc";
+	 bb_bbdo = "344";
+	</script>
+	<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+        </td></tr>
+    </table>
 </div>
-</div>
+
 		            <div class="col-lg-8" style="padding: 0">
 		                <?php if($this->auth->checkLogin('boolean')){ ?>
 			                <a class="btn btn-info"    target="_blank" href="<?php echo ROOT.'reader/material/id/'.$this->materialData[0]["id"];?>">Visualizar</a>
 					    	<a class="btn btn-default" target="_blank" href="<?php echo ROOT.'download/material/id/'.$this->materialData[0]["id"];?>">Download</a>
 			            <?php }else{ ?>
+			                
 			                <a class="btn btn-info"    data-toggle="modal" data-target="#ModalLogin" href="#ModalLogin">Visualizar</a>
 					   		<a class="btn btn-default" data-toggle="modal" data-target="#ModalLogin" href="#ModalLogin">Download</a>
+					   		
+					   		
 			            <?php } ?>
 			        </div>
 			        

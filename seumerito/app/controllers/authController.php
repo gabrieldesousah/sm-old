@@ -40,8 +40,8 @@ class Auth extends Controller{
 		$dados = $this->getParams();
         
 		if(isset($dados['code'])){
-		    $appId = '1445655249068689';
-		    $appSecret = 'f242821c46966c3918a93177138730c1';
+		    $appId = '867217923310126';
+		    $appSecret = '7dcc64a29bab757494fb72fb18513c60';
 		    // Url informada no campo "Site URL"
 		    $redirectUri = urlencode(_GET);
 		    // Obtém o código da query string

@@ -8,6 +8,8 @@ class Dashboard extends Controller{
     public $userHistoricSends;
     
     public function init(){
+    
+    
         $this->auth = new AuthHelper();
         $this->auth->setLoginControllerAction('auth', 'index');
         $this->sessionHelper = new SessionHelper();
@@ -39,12 +41,6 @@ class Dashboard extends Controller{
 		$data["userHistoricSends"] = $this->userHistoricSends;
         
 
-        $papers = new PaperModel();
-
-        $list_papers = $papers->listPapers( $this->userData[0]["user_id"], 160 );
-        $data['list_papers'] = $list_papers;
-        
-        
         $messages = new MessagesModel();
 
         $list_messages = $messages->listMessagesFollow( $this->userData[0]["user_id"], 160 );

@@ -85,13 +85,8 @@ class Share extends Controller{
 	        }
             
         }else{
-        	if($db->insert($table,$data)){
-	           	//Quando o usuário não envia arquivo, e sim links.
-            	echo "<br><br>
-	        	Post criado. Muito obrigado e continue compartilhando (:";
-	        	
-	        	$this->view('share', $material);
-	        }
+        	echo 'Desculpe, não conseguimos receber o arquivo. Tente mais tarde ou nos envie no email: contato@seumerito.com, obrigado.';
+
         }
     }
     
@@ -142,38 +137,6 @@ class Share extends Controller{
         header("Location: " . ROOT . "page/material/id/".$id);
     }
     
-    
-    public function updateContent(){
-		$table = "articles";
- 
- 		$sessionHelper = new SessionHelper();
-        $authCheck = $sessionHelper->checkSession( "userAuth" );
-	    $userData = $sessionHelper->selectSession( "userData" );
-
-    	if($userData["permissions"] == 0){
-    		header("Location: " . ROOT);
-    		break;
-    	}
-
-		$content    	= $_POST["content"];
-		$old_content    = $_POST["old_content"];
-
-		$data = array(
-		    "content" => $content
-		);
-		$db = new Model();	
-
-	    $where = "id = 111 ";
-	    echo $table . var_dump($data) . $where;
-	    
-        if($db->update($table,$data, $where)){
-	       	$this->message = "Conteúdo editado.";
-           	$message = $this->message;
-           	$this->view('message', $message);
-           	
-	    }
-        //header("Location: " . ROOT );
-    }
     
     public function delete(){
 		$table = "articles";

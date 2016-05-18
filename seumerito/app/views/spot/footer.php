@@ -1,9 +1,22 @@
-	<!-- FOOTER -->
-	<div id="f">
-		<div class="container">
-			<div class="row centered">
-<div class="container">
-	<div class="row centered">
+<!-- FOOTER -->
+<div id="f">
+	<div class="container">
+		<div class="row centered">
+
+		<div class="col-lg-4">	
+		<script type="text/javascript">
+		 bb_bid = "1703461";
+		 bb_lang = "pt-BR";
+		 bb_name = "custom";
+		 bb_limit = "6";
+		 bb_format = "bbn";
+		 bb_bbdo = "344";
+		</script>
+		<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+		</div>
+		
+		
+		<div class="col-lg-4">
 		<script type="text/javascript">
 		 bb_bid = "1703461";
 		 bb_lang = "pt-BR";
@@ -13,35 +26,42 @@
 		 bb_bbdo = "344";
 		</script>
 		<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
-	</div>
-</div>
-			    <br>
-			    <section class="col-lg-12">
-					<div id="fb-root"></div>
-					<script>
-						(function(d, s, id) {
-						  var js, fjs = d.getElementsByTagName(s)[0];
-						  if (d.getElementById(id)) return;
-						  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=361932343976909";
-						  fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));
-					</script>
-					<div class="fb-like" data-href="https://www.facebook.com/seumerito" data-width="100" data-colorscheme="dark" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-				</section>
-				<br>
-				<!--<a href="#"><i class="fa fa-twitter"></i></a>-->
-				<a href="https://www.facebook.com/seumerito" target="_blanck" title="Nossa página no Facebook"><i class="fa fa-facebook"></i></a>
-				<a href="https://instagram.com/seumerito/" target="_blanck" title="Nossa página no Instagram"><i class="fa fa-instagram"></i></a>
+		</div>
+
+
+	    
+	    
+	    <div class="col-lg-4">
+	    <br><br>
+		<div id="fb-root"></div>
+		<script>
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=361932343976909";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	        </script>
+		
+		<div class="fb-like" data-href="https://www.facebook.com/seumerito" data-width="100" data-colorscheme="dark" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+		
 				
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- Footer -->
+		<br>
+		<!--<a href="#"><i class="fa fa-twitter"></i></a>-->
+		<a href="https://www.facebook.com/seumerito" target="_blanck" title="Nossa página no Facebook"><i class="fa fa-facebook"></i></a>
+		<!--<a href="https://instagram.com/seumerito/" target="_blanck" title="Nossa página no Instagram"><i class="fa fa-instagram"></i></a>-->
+	    </div>
+		
+	
+	</div>
+    </div><!-- container -->
+</div><!-- Footer -->
 
 	
 	
 	
-	<!-- MODAL FOR CONTACT -->
+	<!-- MODAL FOR LOGIN -->
 	<!-- Modal -->
 	<div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
@@ -54,7 +74,7 @@
     	          <div class="modal-body">
         		      <div class="row centered">
         		  	    <div class="col-lg-12 pricing-option">
-              	      <a  href="https://www.facebook.com/dialog/oauth?client_id=1445655249068689&scope=email,public_profile&redirect_uri=<?php echo _GET; ?>" class="pricing-signup">Entrar com Facebook</a>
+              	      <a  href="https://www.facebook.com/dialog/oauth?client_id=867217923310126&scope=email,public_profile&redirect_uri=<?php echo _GET; ?>" class="pricing-signup">Entrar com Facebook</a>
                     </div>
 	        					<div class="col-lg-12">
 	        						<input name="email" id="email" value="" placeholder="E-mail" type="email">

@@ -3,7 +3,7 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start();
     
-    define( 'URL' , 'http://projects-gabrieldesousah.c9.io/');
+    define( 'URL' , 'http://projects-gabrieldesousah.c9.io');
     
     define( 'ROOT' , '/seumerito/'); //Alterar o caminho
     

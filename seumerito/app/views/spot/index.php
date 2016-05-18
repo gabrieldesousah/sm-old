@@ -23,7 +23,7 @@ if (!$this->auth->checkLogin('boolean')){
         			<h2>Seu M&eacute;rito</h2>
         			<h3>
         			    Sua plataforma colaborativa de <span class="typer" data-delay="100" data-words="provas, listas, resumos, resoluções, aulas" data-colors="white"></span><span class="cursor" data-owner="first-typer"></span><br> 
-        			    Contribua para uma maior acervo.
+        			    <a style="text-decoration: none; color: #fff" href="<?php echo ROOT;?>share/material">Contribua para um maior acervo.</a>
 
         			</h3>
 
@@ -42,6 +42,16 @@ if (!$this->auth->checkLogin('boolean')){
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
+			<!--
+			<a target=="_blank" href="http://www.blesshost.com.br/"><img src="<?php echo URL.ROOT.'banner.jpg'; ?>"/></a>
+			    <br style="clear:all"><br>
+			-->
+			    
+		   <div class="col-lg-4">
+                                                   
+                            <a target=="_blank" href="http://www.blesshost.com.br/"><img src="<?php echo URL.ROOT.'banner2.jpg'; ?>"/></a>
+                       <br><br>
+                    </div>	    
 			    
 				<?php foreach ( $view_list_posts as $list_posts ) : ?>
                     <div class="col-lg-4">
@@ -58,6 +68,22 @@ if (!$this->auth->checkLogin('boolean')){
 		</div><!-- container -->
 	</div><!-- DG -->
 
+
+<div class="table-container">
+    <table class="table table-condensed col-lg-12">
+        <tr><td>
+        <script type="text/javascript">
+	 bb_bid = "1703461";
+	 bb_lang = "pt-BR";
+	 bb_name = "custom";
+	 bb_limit = "7";
+	 bb_format = "bbc";
+	 bb_bbdo = "344";
+	</script>
+	<script type="text/javascript" src="http://static.boo-box.com/javascripts/embed.js"></script>
+        </td></tr>
+    </table>
+</div>
 	
 	<div id="blue">
 		<div class="container">
@@ -83,7 +109,7 @@ if (!$this->auth->checkLogin('boolean')){
 			<h2>Sobre</h2>
 						
 			<div class="container">
-				<p>O SeuMérito é uma plataforma de crowdsourcing, ou seja, um site colaborativo feito de alunos para alunos. 
+				<p>O Seu Mérito é uma plataforma de crowdsourcing, ou seja, um site colaborativo feito de alunos para alunos. 
 					Faça sua contribuição upando suas provas para que possamos disponibilizar a vocês, de forma gratuita, o maior acervo de provas do mundo. 
                     <br>
                     Apesar de focados em engenharias nossa plataforma é aberta a qualquer pessoa ou curso que deseje colaborar com essa preservação de conhecimento.</p>

@@ -76,25 +76,6 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 			<!-------------------------------------------------------------------------------------->
 			
 			<div class="row left" id="box">
-				<b>SM Paper</b>
-                
-                <div class="table-container">
-	                <table class="table table-condensed col-lg-12">
-		                <?php
-		                foreach ( $view_list_papers as $list_papers ) : ?>
-		                    <tr>
-		                    	<td><a class="btn" href="<?php echo ROOT.'paper/material/id/'.$list_papers['id']; ?>"><?php echo $list_papers['title']; ?></td>
-			                    <td class="right"><a class="btn btn-info" target="_blank" href="<?php echo ROOT.'paper/material/id/'.$list_papers['id']; ?>">Visualizar</a></td>
-		                    </tr>
-		                <?php endforeach; ?>
-                	</table>
-                </div>
-
-			</div>
-			
-			<!-------------------------------------------------------------------------------------->
-			
-			<div class="row left" id="box">
 				<b>Mensagens</b>
                 <div class="table-container">
                 	<?php if($this->userData["permissions"] != 0){ ?>
