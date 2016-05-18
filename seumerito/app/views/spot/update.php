@@ -1,7 +1,7 @@
 <?php
 if(!$this->auth->checkLogin('boolean')){
     $this->redirectorHelper = new RedirectorHelper();
-    $this->redirectorHelper->goToController( "dashboard" );
+    $this->redirectorHelper->goToController( "auth" );
 }
 ?>
 <?php include_once("header.php");?>
@@ -13,7 +13,13 @@ if(!$this->auth->checkLogin('boolean')){
 
                 <form action="<?php echo ROOT;?>auth/up" name="signUp" method="post">
 
-                    Senha:<input type="password" name="password"><br>
+                    Senha anterior:<br>
+                    <input type="password" name="last"><br>
+                    
+                    Nova senha:<br>
+                    <input type="password" name="password"><br>
+                    Confirmar senha<br>
+                    <input type="password" name="c_password"><br>
                             
                     <input type="submit">
                 </form>
