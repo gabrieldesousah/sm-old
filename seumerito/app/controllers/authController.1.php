@@ -42,6 +42,26 @@ class Auth extends Controller{
 	    
 		$table = "users";
 		
+		$db = new Model();
+		
+		$id = $_SESSION["userData"]["user_id"];
+        $where = "user_id = $id";
+        $sql = $db->read($table, 'password', $where, '1');
+		
+		
+		$l_md5 = md5($_POST["last"]);		
+		$l_pass = sha1($md5);
+		
+		/*
+		if($l_pass != $sql[0]["password"]){
+			echo "<br><br><br><b>Você digitou a senha antiga de forma errada.</b>";
+			$this->view('update', $data);
+			exit;
+		}
+		*/
+		var_dump($_POST);
+		var_dump($_SESSION);
+		echo $where;
 		
 
  		$md5 = md5($_POST["password"]);		
@@ -50,11 +70,7 @@ class Auth extends Controller{
 		$data = array(
 		    "password" => $pass
 		);
-		
-		$db = new Model();
-		
-		$id = $_SESSION["userData"]["user_id"];
-		$where = "user_id = $id";
+
 	    
         if($db->update($table,$data, $where)){
 	       	$this->message = "Senha editada.";
@@ -210,7 +226,6 @@ class Auth extends Controller{
         $email = $_POST["email"];
         $md5 = md5($_POST["password"]);		
 		$pass = sha1($md5);
-        echo $pass;
         
         $this->auth->setTableName ( "users" )
                    ->setUserColumn( "email" )
