@@ -16,11 +16,18 @@ if(isset($_SESSION['current']) and $_SESSION['current'] != ""){
 	                Olá,  <?php echo($this->userData["name"])    ;?><br>
 	                <b>Seu email:</b>
 	                <?php echo($this->userData["email"])   ;?><br>
+	                <br>
+	                <?php if($this->userData["password"] == ""){  ?>
+	                	<b>Você ainda não tem uma senha cadastrada, por isso pode ter erros ao logar.</b><br><br>
+	                	<a href="<?php echo ROOT.'auth/updatesocial';?>">Clique aqui para adicionar uma senha</a>
+	                	
+	                <?php } ?>
 				</div>
                 <div class="col-lg-4">
                 	<img class="icon rounded" src="https://graph.facebook.com/<?php echo($this->userData["fb_id"]);?>/picture?height=120" alt="<?php echo($this->userData["name"]);?>" />
                 	<hr>
-            		<a href="<?php echo ROOT;?>auth/logout">Sair</a>
+            		<a href="<?php echo ROOT;?>auth/logout">Sair</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            		<a href="<?php echo ROOT.'auth/update';?>">Alterar senha</a>
                 </div>
 			</div>
 			

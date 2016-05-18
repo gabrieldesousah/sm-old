@@ -138,7 +138,6 @@ class AuthHelper{
         
         date_default_timezone_set('America/Sao_Paulo');
    		$data["date"] = date('Y-m-d H:i:s', time());
-
         
         $db = new Model();
         $where = $this->userColumn."='".$data[$this->userColumn]."'";
@@ -149,26 +148,11 @@ class AuthHelper{
         }else{
             if( $db->insert($this->tableName,$data) ){
 
-	        
                 echo"Usuário criado.  <a href='".ROOT."auth/'>Fazer login</a>"; // Faz um redirecionamento aqui.
             }else{
                 echo"Ocorreu algum erro.  <a href='".ROOT."auth/'>Tente novamente</a>";
             }
-
         }
-        
-        
-        	
-        
-
-        
-    }
-    
-    public function update($id){
-
-        $data = $this->data;
-        
-        $db->update($this->tableName, $data, "`user_id` = ".$id);
     }
     
     public function logout(){

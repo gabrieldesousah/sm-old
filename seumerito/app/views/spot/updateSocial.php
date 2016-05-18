@@ -9,19 +9,15 @@ if(!$this->auth->checkLogin('boolean')){
     <div id="dg">
 		<div class="container">
 			<div id="box" class="row centered">
-                <h2>Alterar senha:</h2>
+                <h2>Adicionar senha:</h2>
 
                 <form action="<?php echo ROOT;?>auth/up" name="signUp" method="post">
-					
-                    Senha anterior:<br>
-                    <input type="password" name="last"><br>
-                    
                     Nova senha:<br>
                     <input type="password" name="password"><br>
                     Confirmar senha<br>
                     <input type="password" name="c_password"><br>
                             
-                    <input  class="btn btn-danger" type="submit" value="Alterar">
+                    <input  class="btn btn-danger" type="submit" value="Adicionar">
                 </form>
                 
             </div>

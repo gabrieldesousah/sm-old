@@ -21,10 +21,7 @@ class Auth extends Controller{
     }
     
     public function index_action(){
-        
-        $data="";
-        $this->view('auth', $data); 
-        
+        $this->view('auth');
         
         if($this->authCheck === true){
             echo '<a href="'.ROOT.'auth/logout">Sair</a>';
@@ -32,8 +29,11 @@ class Auth extends Controller{
     }
     
     public function update(){
+        $this->view('update');
+    }
+    public function updatesocial(){
         $data="";
-        $this->view('update', $data);
+        $this->view('updateSocial', $data);
     }
     public function up(){
     	$sessionHelper = new SessionHelper();
@@ -48,29 +48,33 @@ class Auth extends Controller{
         $where = "user_id = $id";
         $sql = $db->read($table, 'password', $where, '1');
 		
-		
 		$l_md5 = md5($_POST["last"]);		
 		$l_pass = sha1($l_md5);
 		
-		if($l_pass != $sql[0]["password"]){
+		if($sql[0]["password"] != "" and $l_pass != $sql[0]["password"]){
 			echo "<br><br><br><b>Você digitou a senha antiga de forma errada.</b>";
 			$this->view('update', $data);
 			exit;
 		}
-
+		
+		if($_POST["password"] == "" and $_POST["password"] != $_POST["c_password"]){
+			echo "<br><br><br><b>As senhas digitadas não são iguais.</b>";
+			$this->view('update', $data);
+			exit;
+		}
+		
  		$md5 = md5($_POST["password"]);		
 		$pass = sha1($md5);
 
 		$data = array(
 		    "password" => $pass
 		);
-		
-
         $db->update($table, $data, $where);
         
-        $this->message = "Senha editada.";
-        $message = $this->message;
-        $this->view('message', $message);
+        echo "<br><b>Senha alterada.</b>
+        <br>";
+
+        $this->view('dashboard');
     }
 
     
@@ -107,7 +111,6 @@ class Auth extends Controller{
 
 
 		            if(isset($user->email) && $user->email){
-
 		                $data = array(
 			        	"fb_id" 	=> $user->id,
 			        	"email" 	=> $user->email,
@@ -125,13 +128,10 @@ class Auth extends Controller{
 					    if($sql != null){
 					    	//email já cadastrado, crie uma sessão
 					    	$data = $sql[0];
-	
 					    	$this->sessionHelper->createSession("userAuth", true)
                                				    ->createSession("userData", $data);
                             $this->redirectorHelper->goToControllerAction('dashboard', 'index');
-					    	
 					    }else{
-					    						    	
 					    	$this->auth->setTableName ( "users" )
 					                   ->setUserColumn( "email" )
 					                   ->setPassColumn( "password" )
@@ -139,26 +139,30 @@ class Auth extends Controller{
 					                   ->signUp();
 					                   
 					        //Agora tem que redirecionar a fim de fazer a sessão
-					        
 					        $this->sessionHelper->createSession("userDataTemp", $data);
 					        
+					        
 					        $this->redirectorHelper->goToControllerAction('auth', 'signUpSocial');
-
 					    }
-
-		               
 		            }
 		        }
 		        else{
 		            $_SESSION['fb_login_error'] = 'Falha ao logar no Facebook';
+	            	
+	            	echo "<br><b>".$_SESSION['fb_login_error']."</b><br>";
+		            $this->view('auth');
 		        }
 		    }
 		    else{
 		        $_SESSION['fb_login_error'] = 'Falha ao logar no Facebook';
+		        echo "<br><b>".$_SESSION['fb_login_error']."</b><br>";
+		        $this->view('auth');
 		    }
 		}
 		else if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['error'])){
 		    $_SESSION['fb_login_error'] = 'Permissão não concedida';
+		    echo "<br><b>".$_SESSION['fb_login_error']."</b><br>";
+		    $this->view('auth');
 		}
     }
     
@@ -178,8 +182,8 @@ class Auth extends Controller{
 		  	$data = $sql[0];
 	    	$this->sessionHelper->createSession("userAuth", true)
                				    ->createSession("userData", $data);
-            $this->redirectorHelper->goToController('dashboard');
-					    	
+            //$this->redirectorHelper->goToController('dashboard');
+			$this->redirectorHelper->goToControllerAction('auth', 'updatesocial');	
 	    }else{
 			echo "Erro";
 			$this->redirectorHelper->goToControllerAction('auth', 'index');
