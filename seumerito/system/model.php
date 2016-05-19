@@ -3,9 +3,9 @@
 class Model {
     protected $db;
     protected $server = 'localhost';
-    protected $dbname = 'seumerito';
-    protected $user   = 'ghss_user';
-    protected $pass   = 'f5b2a3c33';
+    protected $dbname = '';
+    protected $user   = '';
+    protected $pass   = '';
     
     public function __construct(){
         $this->db = new PDO(
